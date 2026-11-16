@@ -32,7 +32,8 @@ log = logging.getLogger("chatbot")
 app = Flask(__name__, static_folder=str(BASE / "static"))
 CORS(app, origins=[
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://trainer-central-chatbot.vercel.app"
 ])
 _client = None
 _cache = {"at": 0.0, "entries": None}
