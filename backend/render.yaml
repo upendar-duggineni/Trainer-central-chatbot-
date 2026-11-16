@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: trainer-central-ai-chatbot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CLAUDE_MODEL
+        value: claude-sonnet-4-5
+      - key: TRAINER_API_BASE
+        value: https://trainer-central-assigments-api.onrender.com
+      - key: TRAINER_API_KEY
+        sync: false

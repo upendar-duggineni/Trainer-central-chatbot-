@@ -1,0 +1,263 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      #182b49,
+      #0b1220 55%
+    );
+
+  color: #edf3ff;
+
+  font: 15px/1.5 Inter, system-ui, sans-serif;
+}
+
+.shell {
+  width: min(920px, 100%);
+  min-height: calc(100vh - 48px);
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #111c2ef5;
+
+  border: 1px solid #263650;
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: 0 24px 80px #0007;
+}
+
+header {
+  padding: 22px 26px;
+
+  border-bottom: 1px solid #263650;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(135deg, #4389f5, #8b6cff);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 22px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+header p,
+.welcome p {
+  font-size: 12px;
+  color: #9eacc2;
+  margin: 3px 0 0;
+}
+
+.status {
+  margin-left: auto;
+  color: #9de6bf;
+  font-size: 12px;
+}
+
+.welcome {
+  padding: 26px 28px 10px;
+}
+
+.welcome h2 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.suggestions button {
+  background: #162640;
+  border: 1px solid #2b4262;
+  color: #cfe0fa;
+
+  border-radius: 999px;
+  padding: 8px 12px;
+
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.suggestions button:hover {
+  border-color: #69a7ff;
+}
+
+.messages {
+  flex: 1;
+
+  padding: 20px 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  overflow-y: auto;
+  min-height: 300px;
+}
+
+.bubble {
+  max-width: min(78%, 680px);
+
+  padding: 13px 16px;
+
+  border-radius: 16px;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bubble small {
+  display: block;
+  font-size: 10px;
+  color: #aebdd1;
+  margin-bottom: 5px;
+}
+
+.bot {
+  align-self: flex-start;
+
+  background: #1a2a42;
+  border: 1px solid #2b405d;
+
+  border-bottom-left-radius: 5px;
+}
+
+.user {
+  align-self: flex-end;
+
+  background: #2867bd;
+  border: 1px solid #4787d9;
+
+  border-bottom-right-radius: 5px;
+}
+
+.typing {
+  color: #9eacc2;
+  font-size: 13px;
+  padding: 0 28px 12px;
+}
+
+form {
+  padding: 18px 22px 12px;
+
+  border-top: 1px solid #263650;
+
+  background: #0f1929;
+
+  display: flex;
+  gap: 10px;
+}
+
+textarea {
+  resize: none;
+  flex: 1;
+
+  min-height: 50px;
+  max-height: 130px;
+
+  border: 1px solid #344762;
+  border-radius: 14px;
+
+  background: #152238;
+  color: #edf3ff;
+
+  padding: 14px;
+
+  font: inherit;
+}
+
+form button {
+  border: 0;
+  border-radius: 14px;
+
+  background: #4389f5;
+  color: white;
+
+  font-weight: 650;
+  padding: 0 22px;
+
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+footer {
+  text-align: center;
+  color: #7f90a9;
+
+  font-size: 11px;
+  padding: 0 12px 16px;
+
+  background: #0f1929;
+}
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 0;
+  }
+
+  .shell {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .welcome {
+    padding: 22px 18px 8px;
+  }
+
+  .messages {
+    padding: 16px 18px;
+  }
+
+  .bubble {
+    max-width: 90%;
+  }
+
+  header {
+    padding: 17px 18px;
+  }
+
+  form {
+    padding: 14px;
+  }
+
+  form button {
+    padding: 0 16px;
+  }
+
+}
