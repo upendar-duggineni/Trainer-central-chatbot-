@@ -1,41 +1,26 @@
-# Trainer Central AI Chatbot
+## 🚀 Live Deployments
 
-A FastAPI + HTML/CSS/JavaScript chatbot. It fetches live records from the existing
-Trainer Central API (`GET /api/entries`) and uses Claude to answer conversationally.
+### 1. Frontend — Vercel
 
-## Local run (Windows PowerShell)
+- **Production:** https://trainer-central-chatbot.vercel.app/
+- **Preview deployment:** https://trainer-central-chatbot-ijtgspyk5-uppuu.vercel.app/
 
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-Copy-Item .env.example .env
-# Add your Anthropic key to .env
-uvicorn main:app --reload
-```
+### 2. Backend — Render
 
-Open http://127.0.0.1:8000
+- **Backend Base URL:** https://trainer-central-chatbot-ouvn.onrender.com/
+- **Health Check:** https://trainer-central-chatbot-ouvn.onrender.com/health
+- **Dashboard Entries Preview:** https://trainer-central-chatbot-ouvn.onrender.com/api/entries-preview
+- **Chat API:** `POST https://trainer-central-chatbot-ouvn.onrender.com/api/chat`
 
-## Environment variables
+### 3. Source Code
 
-- `ANTHROPIC_API_KEY` (required): your Anthropic API key
-- `CLAUDE_MODEL` (optional): defaults to `claude-sonnet-4-5`
-- `TRAINER_API_BASE` (optional): defaults to the supplied Trainer Central API
-- `TRAINER_API_KEY` (optional): set only if the Trainer Central API requires an API key
+- **GitHub Repository:** https://github.com/upendar-duggineni/Trainer-central-chatbot-
 
-## Deploy on Render
+### 4. Deployment Architecture
 
-Create a new **Web Service** from this folder/repository:
-- Runtime: Python
-- Build command: `pip install -r requirements.txt`
-- Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-- Health check path: `/health`
+- Frontend hosted on Vercel.
+- Backend hosted on Render.
+- Assignment records retrieved from the Trainer Central Dashboard API.
+- Claude API used for natural-language responses.
 
-Add `ANTHROPIC_API_KEY` in Render Environment. Add `TRAINER_API_KEY` only if required
-by the Trainer Central API. Do not commit `.env`, API keys, Google credentials, or token files.
-
-## API behavior
-
-Every `/api/chat` request fetches fresh dashboard entries. It passes the retrieved
-records and the question to Claude. The system prompt requires answers to stay grounded
-in the retrieved records and say when information is unavailable. The chatbot is read-only.
+**Note:** Vercel preview URLs can change with new deployments. Use the production URL for sharing the chatbot.
