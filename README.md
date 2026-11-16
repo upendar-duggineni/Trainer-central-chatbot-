@@ -3,7 +3,7 @@
 ### 1. Frontend — Vercel
 
 - **Production:** https://trainer-central-chatbot.vercel.app/
-- **Preview deployment:** https://trainer-central-chatbot-ijtgspyk5-uppuu.vercel.app/
+
 
 ### 2. Backend — Render
 
