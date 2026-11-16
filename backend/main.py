@@ -30,10 +30,11 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger("chatbot")
 
 app = Flask(__name__, static_folder=str(BASE / "static"))
+
 CORS(app, origins=[
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://trainer-central-chatbot.vercel.app"
+    "https://trainer-central-chatbot.vercel.app",
     "https://trainer-central-chatbot-6la1u7d1g-uppuu.vercel.app"
 ])
 _client = None
